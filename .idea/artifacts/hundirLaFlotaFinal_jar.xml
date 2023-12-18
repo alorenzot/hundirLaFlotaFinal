@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="hundirLaFlotaFinal:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/hundirLaFlotaFinal_jar</output-path>
+    <root id="archive" name="hundirLaFlotaFinal.jar">
+      <element id="module-output" name="hundirLaFlotaFinal" />
+    </root>
+  </artifact>
+</component>
