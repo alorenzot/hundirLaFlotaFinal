@@ -19,6 +19,7 @@ public class juegoHundirFlota {
         int[] unVector = new int[10];
         boolean jugador = true;
         String nombreJugador = "";
+        String nombreJugador2;
         int disparosCorrectosJugador = 0;
         int disparosCorrectosPC = 0;
         boolean turnoJugador = true;
@@ -45,6 +46,7 @@ public class juegoHundirFlota {
 
         // Se inicializa y se llena el Tablero del PC
         jugador = false;
+        nombreJugador2=Entrada.nombreJugador();
         Tablero.borrarPantalla();
         Tablero.inicializarTablero(tableroPC);
         Tablero.inicializarTablero(tableroDisparosPC);
@@ -84,8 +86,8 @@ public class juegoHundirFlota {
             disparosCorrectosPC = disparosCorrectosPC + Tablero.sumaCeldas(unVector);
         }
 
-        System.out.println("Disparos correctos para gana el jugador: " + disparosCorrectosJugador);
-        System.out.println("Disparos correctos para gana el PC: " + disparosCorrectosPC);
+        System.out.println("Disparos correctos para que gane " + nombreJugador + ": " + disparosCorrectosJugador);
+        System.out.println("Disparos correctos para que gane " + nombreJugador2 +": " + disparosCorrectosPC);
 
         while (disparosCorrectosJugador > 0 && disparosCorrectosPC > 0) {
             if (turnoJugador) {
@@ -95,7 +97,7 @@ public class juegoHundirFlota {
                 }
                 turnoJugador = false;
             } else {
-                System.out.println("Turno de PC");
+                System.out.println("Turno de " + nombreJugador2);
                 if (Tablero.disparoPC(tableroDisparosPC, tableroJugador)) {
                     disparosCorrectosPC--;
                 }
@@ -104,8 +106,8 @@ public class juegoHundirFlota {
             Tablero.borrarPantalla();
             Tablero.visualizarTablero(tableroPC, tableroDisparosPC, jugador);
             Tablero.visualizarTablero(tableroJugador, tableroDisparosJugador, !jugador);
-            System.out.println("Disparos correctos para gana el jugador: " + disparosCorrectosJugador);
-            System.out.println("Disparos correctos para gana el PC: " + disparosCorrectosPC);
+            System.out.println("Disparos correctos para que gane " + nombreJugador + ": " + disparosCorrectosJugador);
+            System.out.println("Disparos correctos para que gane " + nombreJugador2 +": " + disparosCorrectosPC);
         }
 
         //Cuando el contador llega a 0 se imprime el mensaje de victoria
@@ -113,14 +115,14 @@ public class juegoHundirFlota {
             System.out.println("Enhorabuena " + nombreJugador + ", ¡has ganado!");
         }
         if (disparosCorrectosPC == 0) {
-            System.out.println("Enhorabuena PC, ¡has ganado!");
+            System.out.println("Enhorabuena " + nombreJugador2 + ", ¡has ganado!");
         }
     }
 
     /**
      * Este método coloca el barco si todas las demás funciones se cumplen
      * @param tablero - Elige un tablero
-     * @param tableroDisparos - Elije un tablero de disparos
+     * @param tableroDisparos - Elige un tablero de disparos
      * @param cantidadBarcos - Elige la cantidad de barcos
      * @param longitudBarco - Elige la longitud en celdas del barco
      * @param jugador - Decide si se trabaja con el jugador o no
@@ -131,7 +133,7 @@ public class juegoHundirFlota {
         int columna;
         int orientacion;
         while (cantidad <= cantidadBarcos) {
-            System.out.println("Vamos a proceder a colocar el barco de tamaño " + longitudBarco + ".");
+            System.out.println("Vamos a colocar el barco de tamaño " + longitudBarco + ".");
             fila = Entrada.coordenadaY();
             columna = Entrada.coordenadaX();
             orientacion = Entrada.orientacion();

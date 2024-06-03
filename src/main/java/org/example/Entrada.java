@@ -26,9 +26,9 @@ public class Entrada {
 
     /**
      * Este método devuelve la fila como un entero
-     * @see #valoresCoordenadaY -> Guarda los posibles valores
-     * @see #validaCoordenada(String[], String) -> Verifica que la coordenada introducida se encuentra en los valores posibles
-     * @see #convertirCoordenada(String[], String) -> Convierte la coordenada en entero
+     * @see #valoresCoordenadaY Guarda los posibles valores
+     * @see #validaCoordenada(String[], String) Verifica que la coordenada introducida se encuentra en los valores posibles
+     * @see #convertirCoordenada(String[], String) Convierte la coordenada en entero
      * @return El valor de la coordenada del eje Y
      */
     public static int coordenadaY() {
@@ -46,7 +46,7 @@ public class Entrada {
                 System.out.println("Solo debes introducir un caracter.");
             } else {
                 if (!validaCoordenada(valoresCoordenadaY, sFila)) {
-                    System.out.println("Caracter no valido. Debes introducir un caracter entre [A - J].");
+                    System.out.println("Caracter no valido. Debes introducir un caracter entre [A - J]");
                 } else {
                     fila = convertirCoordenada(valoresCoordenadaY, sFila);
                     coordenadaCorrecta = true;
@@ -58,9 +58,9 @@ public class Entrada {
 
     /**
      * Este método devuelve la columna como un entero
-     * @see #valoresCoordenadaX -> Guarda los posibles valores
-     * @see #validaCoordenada(String[], String) -> Verifica que la coordenada introducida se encuentra en los valores posibles
-     * @see #convertirCoordenada(String[], String) -> Convierte la coordenada en entero
+     * @see #valoresCoordenadaX Guarda los posibles valores
+     * @see #validaCoordenada(String[], String) Verifica que la coordenada introducida se encuentra en los valores posibles
+     * @see #convertirCoordenada(String[], String) Convierte la coordenada en entero
      * @return El valor de la coordenada en el eje X
      */
     public static int coordenadaX() {
@@ -78,7 +78,7 @@ public class Entrada {
                 System.out.println("Solo debes introducir un caracter.");
             } else {
                 if (!validaCoordenada(valoresCoordenadaX, sColumna)) {
-                    System.out.println("Caracter no válido. Debes introducir un caracter entre [A - J].");
+                    System.out.println("Caracter no válido. Debes introducir un caracter entre [0 - 9].");
                 } else {
                     columna = convertirCoordenada(valoresCoordenadaX, sColumna);
                     coordenadaCorrecta = true;
@@ -90,8 +90,8 @@ public class Entrada {
 
     /**
      * Este método devuelve la orientación como un entero
-     * @see #validaCoordenada(String[], String) -> Verifica que la coordenada introducida se encuentra en los valores posibles
-     * @see #convertirCoordenada(String[], String) -> Convierte la coordenada en entero
+     * @see #validaCoordenada(String[], String) Verifica que la coordenada introducida se encuentra en los valores posibles
+     * @see #convertirCoordenada(String[], String) Convierte la coordenada en entero
      * @return La orientacion, 1 -> Horizontal, 0 -> Vertical
      */
     public static int orientacion() {
@@ -141,7 +141,7 @@ public class Entrada {
      *
      * @param valoresCoordenada los valores de la coordenada a convertir
      * @param coordenada la coordenada introducida por el usuario
-     * @return verdadero si la coordenada es valida
+     * @return verdadero si la coordenada es válida
      */
     private static boolean validaCoordenada(String[] valoresCoordenada, String coordenada) {
         boolean coordenadaValida = false;

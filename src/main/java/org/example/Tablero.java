@@ -71,11 +71,11 @@ public class Tablero {
      * @return verdadero si se acierta el disparo
      */
     public static boolean disparoJugador(char[][] tableroDisparosJugador, char[][] tableroPC) {
-        //  El vector barcos esta compuesto de 5 columnas:
+        //  El vector barcos está compuesto de 5 columnas:
         //    columna 0 = posición de la fila en el tablero
         //    columna 1 = posición de la columna en el tablero
         //    columna 2 = longitud de barco
-        //    columna 3 = orientacion (Horizontal o vertical)
+        //    columna 3 = orientación (Horizontal o vertical)
         //    columna 4 = caracter a colocar 0=B (barco), 1=T (Acierto Disparo), 2=* (Fallo Disparo)
         //  Todos los datos son enteros
         int[] barcos = new int[5];
@@ -318,7 +318,7 @@ public class Tablero {
 
         if (!cabeBarco(tablero, longitudBarco, fila, columna, orientacion)) {
             colocarBarcoOk = false;
-            System.out.println("El barco no cabe en esa posicion. Vuelve a intentarlo");
+            System.out.println("El barco no cabe en esa posición. Vuelve a intentarlo");
         } else {
             if (hayColision(tablero, longitudBarco, fila, columna, orientacion)) {
                 colocarBarcoOk = false;
